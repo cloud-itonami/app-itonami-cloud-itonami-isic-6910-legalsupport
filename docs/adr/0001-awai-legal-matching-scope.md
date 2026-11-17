@@ -1,6 +1,7 @@
 # ADR 0001: Awai の法律相談・弁護士マッチング（bot profile と Awai app）の範囲と規制の境界
 
-- 状態: **提案（下書き）**。法的判断が要る項目はすべて「Owner 決定待ち」として未決のまま残す。
+- 状態: **Proposed（O1–O10 は Owner 決定待ち）**。D1–D8 は catalog と governor がすでに強制している安全側の制約だけで、
+  法的判断が要る項目（O1–O10）はこの ADR では決めず、owner に残す。
 - 日付: 2026-11-18
 - 追跡: Linear AWAI-3232（親 AWAI-3230）
 - 後続: AWAI-3233（弁護士マッチング・書類支援の bot profile）、AWAI-3235（法律事務所業務の bot profile）、
