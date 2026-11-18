@@ -1,8 +1,8 @@
 # ADR 0001: Awai の法律相談・弁護士マッチング（bot profile と Awai app）の範囲と規制の境界
 
-- 状態: **Proposed（O1–O10 は Owner 決定待ち）**。D1–D8 は catalog と governor がすでに強制している安全側の制約だけで、
-  法的判断が要る項目（O1–O10）はこの ADR では決めず、owner に残す。
-- 日付: 2026-11-18
+- 状態: **Proposed（O1 は Owner 決定済み、O2–O10 は Owner 決定待ち）**。D1–D8 は catalog と governor がすでに強制している
+  安全側の制約だけで、法的判断が要る項目（O1–O10）はこの ADR では決めず、owner に残す。O1 は owner が 2026-11-18 に決めた（D9）。
+- 日付: 2026-11-18（O1 の決定を 2026-11-18 に追記）
 - 追跡: Linear AWAI-3232（親 AWAI-3230）
 - 後続: AWAI-3233（弁護士マッチング・書類支援の bot profile）、AWAI-3235（法律事務所業務の bot profile）、
   AWAI-3236（Tauri v3 Awai app）、AWAI-3238（Awai Android OS での受け入れ）
@@ -66,9 +66,9 @@ AWAI-3230 は、Itonami の bot profile が法律事務所の業務と、利用�
 - JPN では `:mode/referral-placement` を実装しない（カタログで prohibited）。
 - JPN の `:mode/lawyer-directory` は、カタログで admissible になるまで実装しない（unsettled）。
 - それまでの間、app が JPN で提供できるのは、**利用者が自分で選んだ弁護士へ、利用者自身の操作で
-  相談資料を渡す**ことだけ、という形を候補とする。この形が 72 条の「周旋」に当たらないかは
-  カタログ上も未検証であり、**Owner 決定待ち（O1）**。決まるまで AWAI-3236 はこの操作を
-  descriptor に宣言しない（宣言のない操作は fail closed）。
+  相談資料を渡す**ことだけとする。owner はこの形の提供を 2026-11-18 に許可した（O1、D9 に条件）。
+  この形が 72 条の「周旋」に当たらないかはカタログ上は未検証のままであり、D9 の条件はその判断を
+  カタログに入れるものではない。
 - 弁護士への紹介は、どの法域でも人の sign-off を必須にする（既存の ESCALATE）。
 
 ### D4. 法律事務所側の業務
@@ -109,7 +109,7 @@ endpoint origin が「未定」の操作は、決まるまで descriptor に宣�
 
 | # | 操作 | service | endpoint origin | data categories | 状態 |
 |---|---|---|---|---|---|
-| X1 | 利用者が選んだ弁護士へ相談資料を送る | 未定（メール、Awai の通信など） | 未定 | `legal.consultation`、`legal.document`、`person.contact` | **O1 が決まるまで宣言しない** |
+| X1 | 利用者が選んだ弁護士へ相談資料を送る | 未定（メール、Awai の通信など） | 未定 | `legal.consultation`、`legal.document`、`person.contact` | O1 は許可済み（D9）。service と endpoint origin が決まるまで宣言しない |
 | X2 | 弁護士の資格を照合する | 未定 | 未定 | `credential.lawyer` | **O4 が決まるまで宣言しない** |
 | X3 | 弁護士が修正版を利用者へ返す | X1 と同じ経路 | 未定 | `legal.document` | X1 と同じ |
 | X4 | 推論（下書きの生成） | 端末内推論が既定 | なし（端末内） | `legal.consultation` | 端末内は外部操作ではない |
@@ -121,6 +121,27 @@ endpoint origin が「未定」の操作は、決まるまで descriptor に宣�
 - カタログ上、法律事務所向けの製品は JPN、利用者が直接使う製品は GBR（England & Wales）が最も広い。
 - Awai でどちらから始めるか、両方か、は **Owner 決定待ち（O7）**。
 
+### D9. 利用者が選んだ弁護士への送付（O1 の決定、2026-11-18）
+
+owner（Jun）は 2026-11-18 に、JPN で「利用者が自分で選んだ弁護士へ、利用者自身の操作で相談資料を
+渡す」形を提供すると決めた。これは owner の決定であり、カタログの判定（一次資料に基づく verdict）
+ではない。カタログには対応する service mode を追加しない。送付は bot の service mode ではなく、
+利用者が app で行う外部操作（X1・X3）として扱う。
+
+提供は次の条件の中に限る。どれかを外す変更は、周旋（`:mode/referral-placement`、JPN で prohibited）や
+弁護士一覧（`:mode/lawyer-directory`、unsettled、O9）に近づくため、この決定の範囲外とする。
+
+1. 送付先の弁護士は利用者が自分で指定する（連絡先を利用者が入力する、または利用者がすでに持っている）。
+   app と bot は、送付先の候補を挙げる・順位をつける・推薦する・一覧から選ばせることをしない。
+2. 送付は利用者自身の操作で、1 件ごとに `each-operation` 同意を取る。bot は送付しない（`:effect :propose` のまま）。
+3. 送付にも受任にも連動する支払いを、誰からも受けない（D2）。弁護士から掲載料・利用料を受ける経路も作らない
+   （O2 が決まるまで）。
+4. 送る資料は、利用者が送付前に確認した `legal.consultation`・`legal.document`・`person.contact` に限る。
+5. 返送（X3）は、送付を受けた弁護士から利用者へ、同じ経路で戻るものに限る。
+
+X1・X3 の service と endpoint origin は、この決定では決めない。AWAI-3236 で決めて ADR の D7 に書き、
+それまで descriptor に宣言しない（fail closed）。公開の前に外部の弁護士のレビューを受けるかは O10 のまま。
+
 ## Owner 決定待ち
 
 ここに挙げた項目は、この ADR では決めない。決まるまで後続の issue は該当する機能を実装しない
@@ -128,7 +149,7 @@ endpoint origin が「未定」の操作は、決まるまで descriptor に宣�
 
 | # | 決めること | 決まるまで止まるもの |
 |---|---|---|
-| O1 | JPN で「利用者が自分で選んだ弁護士へ利用者の操作で資料を渡す」形を提供するか。72 条の「周旋」に当たらないかの確認 | X1・X3、AWAI-3236 の送付画面 |
+| ~~O1~~ | **決定済み（2026-11-18、D9）**: JPN で利用者が自分で選んだ弁護士へ、利用者の操作で資料を渡す形を提供する | — |
 | O2 | 収益 mode（JPN は law-firm-saas-license か none か、Awai の経済圏との接続） | 課金に関わるすべて |
 | O3 | 事業として始めるか、誰が operator として資格・責任を負うか | 実運用、AWAI-3238 の公開配布 |
 | O4 | 弁護士の資格確認の照合元・頻度・失効の反映 | X2、lawyer-reviewed の実運用 |
