@@ -1,7 +1,6 @@
 {:itonami.blueprint/id "cloud-itonami-isic-6910-legalsupport"
  :itonami.blueprint/name "Governed AI Legal-Document and Procedure Support (jurisdiction-gated, referral-fee-free)"
- :itonami.blueprint/isic "6910"
- :itonami.blueprint/isco "2611"
+ :itonami.blueprint/isic-rev5 "6910"
  :itonami.blueprint/domain :professional-services/legal-document-and-procedure-support
  :itonami.blueprint/license "AGPL-3.0-or-later"
  :itonami.blueprint/social-impact [:access-to-justice :consumer-protection :legal-cost-reduction]
