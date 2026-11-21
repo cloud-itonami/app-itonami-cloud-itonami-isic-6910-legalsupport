@@ -3,10 +3,11 @@
         ;; kotoba.pprint replaced clojure.pprint here (2026-09-24): the same
         ;; bytes (cljs.pprint transcribed). An explicit floor; tools.deps takes the
         ;; NEWEST sha it is shown.
+        ;; AWAI-3505: September pin no longer loads on the current engine
+        ;; (`char-code` removed; upstream fixed by comparing `\newline`).
+        ;; Use the west sibling checkout until the monorepo pins advance.
         io.github.kotoba-lang/pprint
-        {:git/url "https://github.com/kotoba-lang/kotoba.git"
-         :git/sha "38654600c00caea2caec9ec0650625f2f6a69378"
-         :deps/root "lib/kotoba.pprint"}
+        {:local/root "../../kotoba-lang/pprint"}
         ;; kotoba.lang.edn replaced clojure.edn here (2026-09-23). An explicit floor:
         ;; tools.deps takes the NEWEST sha it is shown, and kbb resolves git deps
         ;; only from nbb.edn, so every project file this repo has names it.
@@ -28,6 +29,17 @@
         {:git/url "https://github.com/kotoba-lang/kotoba.git"
          :git/sha "38654600c00caea2caec9ec0650625f2f6a69378"
          :deps/root "lib/kotoba.io"}
+        ;; AWAI-3505: transitive :local/root "../kotoba.bytes" (from io, edn,
+        ;; langchain) resolves into a different ~/.gitlibs worktree per parent,
+        ;; and current kbb (like tools.deps) refuses the graph with "No known
+        ;; ancestor relationship between local versions". Pinning bytes at top
+        ;; level to this same monorepo sha selects one copy (tools.deps
+        ;; :use-top). Same sha/root pattern the other entries use, so a fresh
+        ;; clone resolves it the same way; offline it reuses the warm mirror.
+        io.github.kotoba-lang/bytes
+        {:git/url "https://github.com/kotoba-lang/kotoba.git"
+         :git/sha "38654600c00caea2caec9ec0650625f2f6a69378"
+         :deps/root "lib/kotoba.bytes"}
         ;; kotoba.lang.text, not clojure.string. Pinned as an explicit floor:
         ;; tools.deps takes the NEWEST sha it is shown, so without a floor here
         ;; this repo silently rides whatever a sibling happens to name.

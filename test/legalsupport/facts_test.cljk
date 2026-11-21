@@ -15,6 +15,11 @@
         [mode entry] (get j k)]
     [jid kind mode entry]))
 
+(def retrieval-batches
+  "取得バッチごとの :rule/retrieved-at。初期一括は 2026-07-26、AWAI-3505 範囲1
+  （情報流通プラットフォーム対処法の開示命令関係）は 2026-11-22。"
+  #{"2026-07-26" "2026-11-22"})
+
 (deftest every-rule-is-citable
   (testing "each rule carries an id, a title, a URL, a verification tier and a retrieval date"
     (doseq [jid (facts/jurisdiction-ids)
@@ -25,8 +30,9 @@
           (str (:rule/id r) " の :rule/url が https URL でない"))
       (is (contains? facts/verifications (:rule/verification r))
           (str (:rule/id r) " の :rule/verification が語彙外"))
-      (is (= "2026-07-26" (:rule/retrieved-at r))
-          (str (:rule/id r) " の :rule/retrieved-at が無い/不一致")))))
+      (is (contains? retrieval-batches (:rule/retrieved-at r))
+          (str (:rule/id r) " の :rule/retrieved-at が取得バッチ外: "
+               (pr-str (:rule/retrieved-at r)))))))
 
 (deftest rule-ids-are-globally-unique
   (let [ids (mapcat #(map :rule/id (facts/rules %)) (facts/jurisdiction-ids))]
@@ -99,6 +105,51 @@
     (is (contains? (:rules-by-verification c) :primary-source-read)
         "一次読了ルールが存在すること")
     (is (seq (:known-gaps c)) "既知の穴が報告されること")))
+
+(deftest awai-3505-scope-1-hasshinsha-facts-are-recorded
+  (testing "AWAI-3505 範囲1: 情報流通プラットフォーム対処法の一次資料が取得日・lawId・最終改正・検証状態つきで載っている"
+    (let [ids #{"jpn.johoryutsu-platform-act"
+                "jpn.hasshinsha-art5" "jpn.hasshinsha-art8"
+                "jpn.hasshinsha-art15" "jpn.hasshinsha-art16"
+                "jpn.tokyo-dc-hasshinsha-forms" "jpn.mic-johoryutsu-2024"}]
+      (doseq [rid ids]
+        (let [r (facts/rule "JPN" rid)]
+          (is (some? r) (str rid " が JPN カタログに無い"))
+          (when (some? r)
+            (is (= "2026-11-22" (:rule/retrieved-at r))
+                (str rid " の取得日が 2026-11-22 でない"))
+            (is (contains? #{:primary-source-read :official-url-retrieved}
+                            (:rule/verification r))
+                (str rid " が一次/公式検証でない"))
+            (is (seq (:rule/verification-note r))
+                (str rid " に検証メモが無い"))
+            (is (seq (:rule/summary r))
+                (str rid " に要旨が無い")))))
+      (testing "lawId と反映済み最終改正の記録"
+        (let [act (facts/rule "JPN" "jpn.johoryutsu-platform-act")]
+          (is (re-find #"413AC0000000137" (:rule/instrument act))
+              "lawId が instrument に記録されていること")
+          (is (re-find #"令和6年法律第25号" (:rule/summary act))
+              "反映済み最終改正が要旨に記録されていること")
+          (is (re-find #"令和8年法律第58号" (:rule/summary act))
+              "未施行の次回改正への注意が要旨にあること"))
+        (doseq [rid ["jpn.hasshinsha-art5" "jpn.hasshinsha-art8"
+                     "jpn.hasshinsha-art15" "jpn.hasshinsha-art16"]]
+          (is (re-find #"413AC0000000137" (:rule/instrument (facts/rule "JPN" rid)))
+              (str rid " の instrument に lawId が無い"))))
+      (testing "出典URLと利用条件の記録"
+        (is (re-find #"laws\.e-gov\.go\.jp/api" (:rule/url (facts/rule "JPN" "jpn.hasshinsha-art8")))
+            "e-Gov 法令 API の出典 URL であること")
+        (is (re-find #"courts\.go\.jp" (:rule/url (facts/rule "JPN" "jpn.tokyo-dc-hasshinsha-forms")))
+            "裁判所の出典 URL であること")
+        (is (re-find #"outline/index\.html"
+                     (:rule/verification-note (facts/rule "JPN" "jpn.tokyo-dc-hasshinsha-forms")))
+            "裁判所サイトの利用条件頁が検証メモにあること")
+        (is (re-find #"soumu\.go\.jp" (:rule/url (facts/rule "JPN" "jpn.mic-johoryutsu-2024")))
+            "総務省の出典 URL であること")
+        (is (re-find #"tyosaku\.html"
+                     (:rule/verification-note (facts/rule "JPN" "jpn.mic-johoryutsu-2024")))
+            "総務省の利用条件頁が検証メモにあること")))))
 
 (deftest japan-guideline-safe-harbour-is-recorded
   (testing "本製品の日本での成立根拠（法務省ガイドライン第4項）が一次読了で載っている"
