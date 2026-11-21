@@ -14,10 +14,10 @@
         ;; kotoba.pprint replaced clojure.pprint here (2026-09-24): the same
         ;; bytes (cljs.pprint transcribed). An explicit floor; tools.deps takes the
         ;; NEWEST sha it is shown.
+        ;; AWAI-3505: same sibling override as deps.edn (September pin uses
+        ;; the removed `char-code`; upstream compares `\newline` now).
         io.github.kotoba-lang/pprint
-        {:git/url "https://github.com/kotoba-lang/kotoba.git"
-         :git/sha "38654600c00caea2caec9ec0650625f2f6a69378"
-         :deps/root "lib/kotoba.pprint"}
+        {:local/root "../../kotoba-lang/pprint"}
         ;; kotoba.lang.edn replaced clojure.edn here (2026-09-23). An explicit floor:
         ;; tools.deps takes the NEWEST sha it is shown, and kbb resolves git deps
         ;; only from nbb.edn, so every project file this repo has names it.
@@ -30,4 +30,18 @@
         io.github.kotoba-lang/test
         {:git/url "https://github.com/kotoba-lang/kotoba.git"
          :git/sha "38654600c00caea2caec9ec0650625f2f6a69378"
-         :deps/root "lib/kotoba.test"}}}
+         :deps/root "lib/kotoba.test"}
+       ;; kotoba.lang.text — also a floor here: without it the transitive
+       ;; "../kotoba.text" locals resolve per-parent worktree (same refusal as
+       ;; bytes below). Same sha/root pattern as the entries above.
+       io.github.kotoba-lang/text
+        {:git/url "https://github.com/kotoba-lang/kotoba.git"
+         :git/sha "38654600c00caea2caec9ec0650625f2f6a69378"
+         :deps/root "lib/kotoba.text"}
+       ;; AWAI-3505: top-level bytes pin (same reason as deps.edn): the
+       ;; transitive "../kotoba.bytes" locals otherwise resolve per-parent
+       ;; worktree and the graph is refused ("No known ancestor relationship").
+       io.github.kotoba-lang/bytes
+        {:git/url "https://github.com/kotoba-lang/kotoba.git"
+         :git/sha "38654600c00caea2caec9ec0650625f2f6a69378"
+         :deps/root "lib/kotoba.bytes"}}}
