@@ -44,7 +44,9 @@
                    standard that supports any verdict. Treated as NOT
                    admissible everywhere in this codebase.
 
-  Retrieval date for every entry below: 2026-07-26.")
+  Each entry carries its own `:rule/retrieved-at`. The initial batch was
+  retrieved 2026-07-26; the AWAI-3505 scope-1 batch (情報流通プラットフォーム
+  対処法の開示命令関係) was retrieved 2026-11-22.")
 
 ;; ---------------------------------------------------------------------------
 ;; Vocabulary
@@ -262,7 +264,191 @@
       (str "**書類だけでなく電磁的記録の作成も明文で含む**ので、電子的な書類生成が"
            "そのまま業務範囲に入る。5号が『相談に応ずること』まで含む点も広い。"
            "登記・供託・裁判所提出書類を扱う機能は72条の前にこちらに当たる。")
-      :rule/topic #{:document-assistance :adjacent-profession}}]
+      :rule/topic #{:document-assistance :adjacent-profession}}
+
+     ;; AWAI-3505 scope 1 — 情報流通プラットフォーム対処法の発信者情報開示関係。
+     ;; 2026-11-22 取得。法的判断（侵害の有無・「明らか」該当性・期限計算）は
+     ;; 一切行わず、手続の存在・条文・公式書式の所在という事実のみを記録する。
+     {:rule/id "jpn.johoryutsu-platform-act"
+      :rule/title "特定電気通信による情報の流通によって発生する権利侵害等への対処に関する法律（情報流通プラットフォーム対処法、旧称プロバイダ責任制限法）"
+      :rule/instrument "特定電気通信による情報の流通によって発生する権利侵害等への対処に関する法律（平成13年法律第137号、e-Gov法令API lawId 413AC0000000137）"
+      :rule/url "https://laws.e-gov.go.jp/api/1/lawdata/413AC0000000137"
+      :rule/url-provenance :official-legislation-api
+      :rule/verification :primary-source-read
+      :rule/verification-note
+      (str "e-Gov法令APIのXML全文を2026-11-22に取得し読了。"
+           "法令名・lawId・5条/8条/15条/16条の見出しと本文・各改正附則の施行期日を確認。"
+           "法令検索のHTML頁はJavaScript描画のため本ツールでは取得できずAPIを用いた。"
+           "条文自体は著作権法13条1号により権利の対象外。")
+      :rule/established-date "2001-11-30"
+      :rule/retrieved-at "2026-11-22"
+      :rule/summary
+      (str "正式名は特定電気通信による情報の流通によって発生する権利侵害等への"
+           "対処に関する法律。旧称は特定電気通信役務提供者の損害賠償責任の制限及び"
+           "発信者情報の開示に関する法律（プロバイダ責任制限法）で、APIの略称欄にも残る。"
+           "令和6年法律第25号（公布2024-05-17）が現行題名に改め第5章"
+           "（大規模特定電気通信役務提供者の義務）を追加し、2025-04-01施行"
+           "（総務省・令和7年版情報通信白書。別rule jpn.mic-johoryutsu-2024）。"
+           "本文に反映されている直近の実質改正は同号。"
+           "令和8年法律第58号附則（新法27条の2の指針。2027-03-01施行）は取得日時点で"
+           "未施行のため本文未反映（本文に27条の2なし）。本文38条＋附則。"
+           "第3章（5〜7条）が発信者情報の開示請求、第4章（8〜19条）が"
+           "発信者情報開示命令事件の裁判手続を定める。")
+      :rule/topic #{:disclosure-order :platform-act :amendment}}
+
+     {:rule/id "jpn.hasshinsha-art5"
+      :rule/title "情報流通プラットフォーム対処法5条（発信者情報の開示請求）"
+      :rule/instrument "情報流通プラットフォーム対処法（平成13年法律第137号、lawId 413AC0000000137）第5条"
+      :rule/quote
+      (str "特定電気通信による情報の流通によって自己の権利を侵害されたとする者は、"
+           "当該特定電気通信の用に供される特定電気通信設備を用いる"
+           "特定電気通信役務提供者に対し、当該特定電気通信役務提供者が保有する"
+           "当該権利の侵害に係る発信者情報のうち、特定発信者情報"
+           "（発信者情報であって専ら侵害関連通信に係るものとして総務省令で定めるもの"
+           "をいう。以下この項及び第十五条第二項において同じ。）以外の発信者情報に"
+           "ついては第一号及び第二号のいずれにも該当するとき、特定発信者情報に"
+           "ついては次の各号のいずれにも該当するときは、それぞれその開示を請求する"
+           "ことができる。")
+      :rule/url "https://laws.e-gov.go.jp/api/1/lawdata/413AC0000000137"
+      :rule/url-provenance :official-legislation-api
+      :rule/verification :primary-source-read
+      :rule/verification-note
+      (str "jpn.johoryutsu-platform-act と同一XMLを2026-11-22に取得し、5条全文を読了。"
+           "引用は第1項第1文の逐語。逐語の各号（1号「明らか」、2号「正当な理由」等）は"
+           "e-Gov原文参照。条文自体は著作権法13条1号により権利の対象外。")
+      :rule/retrieved-at "2026-11-22"
+      :rule/summary
+      (str "第1項は、権利を侵害されたとする者が特定電気通信役務提供者に発信者情報の"
+           "開示を請求できる旨を定める。第1項1号は侵害が「明らか」であること、2号は"
+           "損害賠償請求権の行使の必要性その他「正当な理由」があることを求める。"
+           "特定発信者情報（専ら侵害関連通信に係るものとして総務省令で定めるもの）に"
+           "ついては別建ての各号が掛かる。第2項は関連電気通信役務提供者への請求、"
+           "第3項は「侵害関連通信」の定義。各号への該当（侵害が「明らか」か等）の"
+           "判断は個別事案の法的判断であり、本カタログは事実の存在のみを記録し判断しない。")
+      :rule/topic #{:disclosure-order :procedure}}
+
+     {:rule/id "jpn.hasshinsha-art8"
+      :rule/title "情報流通プラットフォーム対処法8条（発信者情報開示命令）"
+      :rule/instrument "情報流通プラットフォーム対処法（平成13年法律第137号、lawId 413AC0000000137）第8条"
+      :rule/quote
+      (str "裁判所は、特定電気通信による情報の流通によって自己の権利を侵害されたと"
+           "する者の申立てにより、決定で、当該権利の侵害に係る開示関係役務提供者に"
+           "対し、第五条第一項又は第二項の規定による請求に基づく発信者情報の開示を"
+           "命ずることができる。")
+      :rule/url "https://laws.e-gov.go.jp/api/1/lawdata/413AC0000000137"
+      :rule/url-provenance :official-legislation-api
+      :rule/verification :primary-source-read
+      :rule/verification-note
+      (str "jpn.johoryutsu-platform-act と同一XMLを2026-11-22に取得し、8条を読了。"
+           "引用は8条の逐語全文。条文自体は著作権法13条1号により権利の対象外。")
+      :rule/retrieved-at "2026-11-22"
+      :rule/summary
+      (str "裁判所は、権利を侵害されたとする者の申立てにより、決定で、開示関係役務"
+           "提供者に対し5条1項・2項の請求に基づく開示を命ずることができる。"
+           "第4章（8〜19条）がこの裁判手続（非訟）を定め、9条以下に管轄・記録閲覧・"
+           "取下げ・異議の訴え等が置かれる。令和3年法律第27号附則は政令施行委任と"
+           "経過措置を置く（e-Gov附則より）。東京地裁が現行の申立書式を公開し運用中"
+           "（別rule jpn.tokyo-dc-hasshinsha-forms）。命令が出るか・要件に該当するかの"
+           "判断は個別事案の法的判断であり、本カタログは行わない。")
+      :rule/topic #{:disclosure-order :procedure}}
+
+     {:rule/id "jpn.hasshinsha-art15"
+      :rule/title "情報流通プラットフォーム対処法15条（提供命令）"
+      :rule/instrument "情報流通プラットフォーム対処法（平成13年法律第137号、lawId 413AC0000000137）第15条"
+      :rule/quote
+      (str "本案の発信者情報開示命令事件が係属する裁判所は、発信者情報開示命令の申立て"
+           "に係る侵害情報の発信者を特定することができなくなることを防止するため必要"
+           "があると認めるときは、当該発信者情報開示命令の申立てをした者"
+           "（以下この項において「申立人」という。）の申立てにより、決定で、当該"
+           "発信者情報開示命令の申立ての相手方である開示関係役務提供者に対し、"
+           "次に掲げる事項を命ずることができる。")
+      :rule/url "https://laws.e-gov.go.jp/api/1/lawdata/413AC0000000137"
+      :rule/url-provenance :official-legislation-api
+      :rule/verification :primary-source-read
+      :rule/verification-note
+      (str "jpn.johoryutsu-platform-act と同一XMLを2026-11-22に取得し、15条を読了。"
+           "引用は15条第1項第1文の逐語。命じうる事項の各号はe-Gov原文参照。"
+           "条文自体は著作権法13条1号により権利の対象外。")
+      :rule/retrieved-at "2026-11-22"
+      :rule/summary
+      (str "本案係属裁判所は、侵害情報の発信者を特定できなくなる防止に必要があるとき、"
+           "申立人の申立てにより決定で相手方開示関係役務提供者に事項を命じうる。"
+           "東京地裁の現行書式は、コンテンツプロバイダに対する提供命令の併合申立てを"
+           "記載例①として案内する（別rule jpn.tokyo-dc-hasshinsha-forms）。"
+           "必要性の判断は個別事案の法的判断であり、本カタログは行わない。")
+      :rule/topic #{:disclosure-order :procedure}}
+
+     {:rule/id "jpn.hasshinsha-art16"
+      :rule/title "情報流通プラットフォーム対処法16条（消去禁止命令）"
+      :rule/instrument "情報流通プラットフォーム対処法（平成13年法律第137号、lawId 413AC0000000137）第16条"
+      :rule/quote
+      (str "本案の発信者情報開示命令事件が係属する裁判所は、発信者情報開示命令の申立て"
+           "に係る侵害情報の発信者を特定することができなくなることを防止するため必要"
+           "があると認めるときは、当該発信者情報開示命令の申立てをした者の申立てに"
+           "より、決定で、当該発信者情報開示命令の申立ての相手方である開示関係役務"
+           "提供者に対し、当該発信者情報開示命令事件（当該発信者情報開示命令事件に"
+           "ついての第十四条第一項に規定する決定に対して同項に規定する訴えが提起"
+           "されたときは、その訴訟）が終了するまでの間、当該開示関係役務提供者が"
+           "保有する発信者情報（当該発信者情報開示命令の申立てに係るものに限る。）を"
+           "消去してはならない旨を命ずることができる。")
+      :rule/url "https://laws.e-gov.go.jp/api/1/lawdata/413AC0000000137"
+      :rule/url-provenance :official-legislation-api
+      :rule/verification :primary-source-read
+      :rule/verification-note
+      (str "jpn.johoryutsu-platform-act と同一XMLを2026-11-22に取得し、16条を読了。"
+           "引用は16条の逐語全文。条文自体は著作権法13条1号により権利の対象外。")
+      :rule/retrieved-at "2026-11-22"
+      :rule/summary
+      (str "本案係属裁判所は、発信者特定不能の防止に必要があるとき、申立てにより決定で"
+           "相手方開示関係役務提供者に、事件（異議の訴え提起時はその訴訟）終了まで対象"
+           "発信者情報の消去禁止を命じうる。東京地裁の現行書式は、アクセスプロバイダに"
+           "対する消去禁止命令の併合申立てを記載例③として案内する"
+           "（別rule jpn.tokyo-dc-hasshinsha-forms）。保存期間の目安は各社の運用の話で"
+           "法令の定めではなく、個別の期限計算は本カタログでは扱わない。")
+      :rule/topic #{:disclosure-order :procedure}}
+
+     {:rule/id "jpn.tokyo-dc-hasshinsha-forms"
+      :rule/title "発信者情報開示命令申立て（東京地方裁判所民事第9部）— 申立書式等"
+      :rule/instrument "東京地方裁判所（民事第9部）公開頁「発信者情報開示命令申立て」"
+      :rule/url "https://www.courts.go.jp/tokyo/saiban/minzi_section09/hassinnsya_kaiji/index.html"
+      :rule/url-provenance :official-court-site
+      :rule/verification :official-url-retrieved
+      :rule/verification-note
+      (str "頁本文を2026-11-22に取得し読了。開示命令・提供命令・消去禁止命令の共通"
+           "申立書式（R8.10更新）と記載例①〜④・参考書式の掲載を確認。頁に無断転載禁止"
+           "の注記なし。利用条件は courts.go.jp「このサイトについて」"
+           "（https://www.courts.go.jp/outline/index.html。2026-11-22確認）:"
+           "著作権法上認められる利用（引用等）は可、無断改変不可、リンクは原則自由"
+           "（関係誤認の付記不可、トップ以外は裁判所サイトへのリンクと明記）。"
+           "書式ファイル自体（Word/Excel/PDF）は取得していない。")
+      :rule/retrieved-at "2026-11-22"
+      :rule/summary
+      (str "東京地裁民事第9部は発信者情報開示命令申立事件（事件符号：発チ）の書式集を"
+           "公開する。共通申立書は開示命令・提供命令・消去禁止命令の併合に対応し、"
+           "記載例①はコンテンツプロバイダへの提供命令併合、③はアクセスプロバイダへの"
+           "消去禁止命令併合を案内する。電子申立て不可（民事訴訟の全面電子化の対象外）で"
+           "書面提出が必要。申立書の文面作成は本製品の範囲外（O6）。")
+      :rule/topic #{:disclosure-order :procedure :court-form}}
+
+     {:rule/id "jpn.mic-johoryutsu-2024"
+      :rule/title "情報流通プラットフォーム対処法の施行（令和7年版情報通信白書）"
+      :rule/instrument "総務省 令和7年版情報通信白書"
+      :rule/url "https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/r07/html/nd123210.html"
+      :rule/url-provenance :official-government-site
+      :rule/verification :official-url-retrieved
+      :rule/verification-note
+      (str "頁本文を2026-11-22に取得し読了。利用条件は総務省HP「著作権について」"
+           "（https://www.soumu.go.jp/menu_kyotsuu/policy/tyosaku.html。2026-11-22確認）:"
+           "権利表記がない限り公共データ利用規約（第1.0版）準拠・出典記載で利用可。")
+      :rule/established-date "2025"
+      :rule/retrieved-at "2026-11-22"
+      :rule/summary
+      (str "2024年5月成立のプロバイダ責任制限法一部改正法により、大規模プラット"
+           "フォーム事業者に①対応の迅速化②運用状況の透明化の措置を義務付け、法の"
+           "題名も現行名に改めた。同改正法は2025年4月1日施行。施行に当たり総務省は"
+           "違法情報ガイドラインを策定。所管は総務省（総合通信基盤局）。"
+           "改正の当否・適用の判断は扱わず、施行の事実のみを記録する。")
+      :rule/topic #{:platform-act :amendment}}]
 
     :jurisdiction/service-modes
     {:mode/template-selection
@@ -383,7 +569,9 @@
     :jurisdiction/known-gaps
     ["弁護士法27条（非弁提携）の原文・射程が未検証"
      "日弁連 弁護士等の業務広告に関する規程が未取得"
-     "行政書士法1条の2/19条、司法書士法3条の原文が未取得（現在は制限方向にのみ作用）"]}
+     "行政書士法1条の2/19条、司法書士法3条の原文が未取得（現在は制限方向にのみ作用）"
+     "各社の Government Request Portal は捜査機関専用であり利用者向け経路に含めない（個別URLは収載しない）"
+     "令和8年法律第58号による改正は2027-03-01施行で未施行のため、施行後に再検証が必要"]}
 
    ;; -----------------------------------------------------------------------
    "GBR"

@@ -1408,6 +1408,143 @@
   :db/id -136,
   :legal/topic "adjacent-profession document-assistance",
   :legal/url-provenance "official-legislation-api"}
+ {:legal/rule-id "jpn.johoryutsu-platform-act",
+  :legal/fact-kind "rule",
+  :legal/summary
+  "正式名は特定電気通信による情報の流通によって発生する権利侵害等への対処に関する法律。旧称は特定電気通信役務提供者の損害賠償責任の制限及び発信者情報の開示に関する法律（プロバイダ責任制限法）で、APIの略称欄にも残る。令和6年法律第25号（公布2024-05-17）が現行題名に改め第5章（大規模特定電気通信役務提供者の義務）を追加し、2025-04-01施行（総務省・令和7年版情報通信白書。別rule jpn.mic-johoryutsu-2024）。本文に反映されている直近の実質改正は同号。令和8年法律第58号附則（新法27条の2の指針。2027-03-01施行）は取得日時点で未施行のため本文未反映（本文に27条の2なし）。本文38条＋附則。第3章（5〜7条）が発信者情報の開示請求、第4章（8〜19条）が発信者情報開示命令事件の裁判手続を定める。",
+  :legal/retrieved-at "2026-11-22",
+  :legal/verification "primary-source-read",
+  :legal/instrument
+  "特定電気通信による情報の流通によって発生する権利侵害等への対処に関する法律（平成13年法律第137号、e-Gov法令API lawId 413AC0000000137）",
+  :legal/verification-note
+  "e-Gov法令APIのXML全文を2026-11-22に取得し読了。法令名・lawId・5条/8条/15条/16条の見出しと本文・各改正附則の施行期日を確認。法令検索のHTML頁はJavaScript描画のため本ツールでは取得できずAPIを用いた。条文自体は著作権法13条1号により権利の対象外。",
+  :legal/jurisdiction "JPN",
+  :legal/url "https://laws.e-gov.go.jp/api/1/lawdata/413AC0000000137",
+  :legal/rule-title
+  "特定電気通信による情報の流通によって発生する権利侵害等への対処に関する法律（情報流通プラットフォーム対処法、旧称プロバイダ責任制限法）",
+  :source/dataset "legal-jurisdiction-rules",
+  :legal/verified true,
+  :db/id -137,
+  :legal/topic "amendment disclosure-order platform-act",
+  :legal/established-date "2001-11-30",
+  :legal/url-provenance "official-legislation-api"}
+ {:legal/rule-id "jpn.hasshinsha-art5",
+  :legal/fact-kind "rule",
+  :legal/summary
+  "第1項は、権利を侵害されたとする者が特定電気通信役務提供者に発信者情報の開示を請求できる旨を定める。第1項1号は侵害が「明らか」であること、2号は損害賠償請求権の行使の必要性その他「正当な理由」があることを求める。特定発信者情報（専ら侵害関連通信に係るものとして総務省令で定めるもの）については別建ての各号が掛かる。第2項は関連電気通信役務提供者への請求、第3項は「侵害関連通信」の定義。各号への該当（侵害が「明らか」か等）の判断は個別事案の法的判断であり、本カタログは事実の存在のみを記録し判断しない。",
+  :legal/retrieved-at "2026-11-22",
+  :legal/verification "primary-source-read",
+  :legal/instrument
+  "情報流通プラットフォーム対処法（平成13年法律第137号、lawId 413AC0000000137）第5条",
+  :legal/quote
+  "特定電気通信による情報の流通によって自己の権利を侵害されたとする者は、当該特定電気通信の用に供される特定電気通信設備を用いる特定電気通信役務提供者に対し、当該特定電気通信役務提供者が保有する当該権利の侵害に係る発信者情報のうち、特定発信者情報（発信者情報であって専ら侵害関連通信に係るものとして総務省令で定めるものをいう。以下この項及び第十五条第二項において同じ。）以外の発信者情報については第一号及び第二号のいずれにも該当するとき、特定発信者情報については次の各号のいずれにも該当するときは、それぞれその開示を請求することができる。",
+  :legal/verification-note
+  "jpn.johoryutsu-platform-act と同一XMLを2026-11-22に取得し、5条全文を読了。引用は第1項第1文の逐語。逐語の各号（1号「明らか」、2号「正当な理由」等）はe-Gov原文参照。条文自体は著作権法13条1号により権利の対象外。",
+  :legal/jurisdiction "JPN",
+  :legal/url "https://laws.e-gov.go.jp/api/1/lawdata/413AC0000000137",
+  :legal/rule-title "情報流通プラットフォーム対処法5条（発信者情報の開示請求）",
+  :source/dataset "legal-jurisdiction-rules",
+  :legal/verified true,
+  :db/id -138,
+  :legal/topic "disclosure-order procedure",
+  :legal/url-provenance "official-legislation-api"}
+ {:legal/rule-id "jpn.hasshinsha-art8",
+  :legal/fact-kind "rule",
+  :legal/summary
+  "裁判所は、権利を侵害されたとする者の申立てにより、決定で、開示関係役務提供者に対し5条1項・2項の請求に基づく開示を命ずることができる。第4章（8〜19条）がこの裁判手続（非訟）を定め、9条以下に管轄・記録閲覧・取下げ・異議の訴え等が置かれる。令和3年法律第27号附則は政令施行委任と経過措置を置く（e-Gov附則より）。東京地裁が現行の申立書式を公開し運用中（別rule jpn.tokyo-dc-hasshinsha-forms）。命令が出るか・要件に該当するかの判断は個別事案の法的判断であり、本カタログは行わない。",
+  :legal/retrieved-at "2026-11-22",
+  :legal/verification "primary-source-read",
+  :legal/instrument
+  "情報流通プラットフォーム対処法（平成13年法律第137号、lawId 413AC0000000137）第8条",
+  :legal/quote
+  "裁判所は、特定電気通信による情報の流通によって自己の権利を侵害されたとする者の申立てにより、決定で、当該権利の侵害に係る開示関係役務提供者に対し、第五条第一項又は第二項の規定による請求に基づく発信者情報の開示を命ずることができる。",
+  :legal/verification-note
+  "jpn.johoryutsu-platform-act と同一XMLを2026-11-22に取得し、8条を読了。引用は8条の逐語全文。条文自体は著作権法13条1号により権利の対象外。",
+  :legal/jurisdiction "JPN",
+  :legal/url "https://laws.e-gov.go.jp/api/1/lawdata/413AC0000000137",
+  :legal/rule-title "情報流通プラットフォーム対処法8条（発信者情報開示命令）",
+  :source/dataset "legal-jurisdiction-rules",
+  :legal/verified true,
+  :db/id -139,
+  :legal/topic "disclosure-order procedure",
+  :legal/url-provenance "official-legislation-api"}
+ {:legal/rule-id "jpn.hasshinsha-art15",
+  :legal/fact-kind "rule",
+  :legal/summary
+  "本案係属裁判所は、侵害情報の発信者を特定できなくなる防止に必要があるとき、申立人の申立てにより決定で相手方開示関係役務提供者に事項を命じうる。東京地裁の現行書式は、コンテンツプロバイダに対する提供命令の併合申立てを記載例①として案内する（別rule jpn.tokyo-dc-hasshinsha-forms）。必要性の判断は個別事案の法的判断であり、本カタログは行わない。",
+  :legal/retrieved-at "2026-11-22",
+  :legal/verification "primary-source-read",
+  :legal/instrument
+  "情報流通プラットフォーム対処法（平成13年法律第137号、lawId 413AC0000000137）第15条",
+  :legal/quote
+  "本案の発信者情報開示命令事件が係属する裁判所は、発信者情報開示命令の申立てに係る侵害情報の発信者を特定することができなくなることを防止するため必要があると認めるときは、当該発信者情報開示命令の申立てをした者（以下この項において「申立人」という。）の申立てにより、決定で、当該発信者情報開示命令の申立ての相手方である開示関係役務提供者に対し、次に掲げる事項を命ずることができる。",
+  :legal/verification-note
+  "jpn.johoryutsu-platform-act と同一XMLを2026-11-22に取得し、15条を読了。引用は15条第1項第1文の逐語。命じうる事項の各号はe-Gov原文参照。条文自体は著作権法13条1号により権利の対象外。",
+  :legal/jurisdiction "JPN",
+  :legal/url "https://laws.e-gov.go.jp/api/1/lawdata/413AC0000000137",
+  :legal/rule-title "情報流通プラットフォーム対処法15条（提供命令）",
+  :source/dataset "legal-jurisdiction-rules",
+  :legal/verified true,
+  :db/id -140,
+  :legal/topic "disclosure-order procedure",
+  :legal/url-provenance "official-legislation-api"}
+ {:legal/rule-id "jpn.hasshinsha-art16",
+  :legal/fact-kind "rule",
+  :legal/summary
+  "本案係属裁判所は、発信者特定不能の防止に必要があるとき、申立てにより決定で相手方開示関係役務提供者に、事件（異議の訴え提起時はその訴訟）終了まで対象発信者情報の消去禁止を命じうる。東京地裁の現行書式は、アクセスプロバイダに対する消去禁止命令の併合申立てを記載例③として案内する（別rule jpn.tokyo-dc-hasshinsha-forms）。保存期間の目安は各社の運用の話で法令の定めではなく、個別の期限計算は本カタログでは扱わない。",
+  :legal/retrieved-at "2026-11-22",
+  :legal/verification "primary-source-read",
+  :legal/instrument
+  "情報流通プラットフォーム対処法（平成13年法律第137号、lawId 413AC0000000137）第16条",
+  :legal/quote
+  "本案の発信者情報開示命令事件が係属する裁判所は、発信者情報開示命令の申立てに係る侵害情報の発信者を特定することができなくなることを防止するため必要があると認めるときは、当該発信者情報開示命令の申立てをした者の申立てにより、決定で、当該発信者情報開示命令の申立ての相手方である開示関係役務提供者に対し、当該発信者情報開示命令事件（当該発信者情報開示命令事件についての第十四条第一項に規定する決定に対して同項に規定する訴えが提起されたときは、その訴訟）が終了するまでの間、当該開示関係役務提供者が保有する発信者情報（当該発信者情報開示命令の申立てに係るものに限る。）を消去してはならない旨を命ずることができる。",
+  :legal/verification-note
+  "jpn.johoryutsu-platform-act と同一XMLを2026-11-22に取得し、16条を読了。引用は16条の逐語全文。条文自体は著作権法13条1号により権利の対象外。",
+  :legal/jurisdiction "JPN",
+  :legal/url "https://laws.e-gov.go.jp/api/1/lawdata/413AC0000000137",
+  :legal/rule-title "情報流通プラットフォーム対処法16条（消去禁止命令）",
+  :source/dataset "legal-jurisdiction-rules",
+  :legal/verified true,
+  :db/id -141,
+  :legal/topic "disclosure-order procedure",
+  :legal/url-provenance "official-legislation-api"}
+ {:legal/rule-id "jpn.tokyo-dc-hasshinsha-forms",
+  :legal/fact-kind "rule",
+  :legal/summary
+  "東京地裁民事第9部は発信者情報開示命令申立事件（事件符号：発チ）の書式集を公開する。共通申立書は開示命令・提供命令・消去禁止命令の併合に対応し、記載例①はコンテンツプロバイダへの提供命令併合、③はアクセスプロバイダへの消去禁止命令併合を案内する。電子申立て不可（民事訴訟の全面電子化の対象外）で書面提出が必要。申立書の文面作成は本製品の範囲外（O6）。",
+  :legal/retrieved-at "2026-11-22",
+  :legal/verification "official-url-retrieved",
+  :legal/instrument "東京地方裁判所（民事第9部）公開頁「発信者情報開示命令申立て」",
+  :legal/verification-note
+  "頁本文を2026-11-22に取得し読了。開示命令・提供命令・消去禁止命令の共通申立書式（R8.10更新）と記載例①〜④・参考書式の掲載を確認。頁に無断転載禁止の注記なし。利用条件は courts.go.jp「このサイトについて」（https://www.courts.go.jp/outline/index.html。2026-11-22確認）:著作権法上認められる利用（引用等）は可、無断改変不可、リンクは原則自由（関係誤認の付記不可、トップ以外は裁判所サイトへのリンクと明記）。書式ファイル自体（Word/Excel/PDF）は取得していない。",
+  :legal/jurisdiction "JPN",
+  :legal/url
+  "https://www.courts.go.jp/tokyo/saiban/minzi_section09/hassinnsya_kaiji/index.html",
+  :legal/rule-title "発信者情報開示命令申立て（東京地方裁判所民事第9部）— 申立書式等",
+  :source/dataset "legal-jurisdiction-rules",
+  :legal/verified true,
+  :db/id -142,
+  :legal/topic "court-form disclosure-order procedure",
+  :legal/url-provenance "official-court-site"}
+ {:legal/rule-id "jpn.mic-johoryutsu-2024",
+  :legal/fact-kind "rule",
+  :legal/summary
+  "2024年5月成立のプロバイダ責任制限法一部改正法により、大規模プラットフォーム事業者に①対応の迅速化②運用状況の透明化の措置を義務付け、法の題名も現行名に改めた。同改正法は2025年4月1日施行。施行に当たり総務省は違法情報ガイドラインを策定。所管は総務省（総合通信基盤局）。改正の当否・適用の判断は扱わず、施行の事実のみを記録する。",
+  :legal/retrieved-at "2026-11-22",
+  :legal/verification "official-url-retrieved",
+  :legal/instrument "総務省 令和7年版情報通信白書",
+  :legal/verification-note
+  "頁本文を2026-11-22に取得し読了。利用条件は総務省HP「著作権について」（https://www.soumu.go.jp/menu_kyotsuu/policy/tyosaku.html。2026-11-22確認）:権利表記がない限り公共データ利用規約（第1.0版）準拠・出典記載で利用可。",
+  :legal/jurisdiction "JPN",
+  :legal/url
+  "https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/r07/html/nd123210.html",
+  :legal/rule-title "情報流通プラットフォーム対処法の施行（令和7年版情報通信白書）",
+  :source/dataset "legal-jurisdiction-rules",
+  :legal/verified true,
+  :db/id -143,
+  :legal/topic "amendment platform-act",
+  :legal/established-date "2025",
+  :legal/url-provenance "official-government-site"}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "jpn.moj-ai-contract-guideline-2023",
@@ -1418,7 +1555,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/template-selection",
-  :db/id -137}
+  :db/id -144}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "jpn.moj-ai-contract-guideline-2023",
@@ -1429,7 +1566,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/document-assembly",
-  :db/id -138}
+  :db/id -145}
  {:legal/basis-count 2,
   :legal/fact-kind "verdict",
   :legal/basis "jpn.moj-ai-contract-guideline-2023 jpn.bengoshi-ho-72",
@@ -1440,7 +1577,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/legal-analysis",
-  :db/id -139}
+  :db/id -146}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "jpn.moj-ai-contract-guideline-2023",
@@ -1451,7 +1588,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-reviewed",
-  :db/id -140}
+  :db/id -147}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "jpn.moj-ai-contract-guideline-2023",
@@ -1462,7 +1599,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/inhouse-reviewed",
-  :db/id -141}
+  :db/id -148}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1473,7 +1610,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-directory",
-  :db/id -142}
+  :db/id -149}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "jpn.bengoshi-ho-72",
@@ -1484,7 +1621,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/referral-placement",
-  :db/id -143}
+  :db/id -150}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "jpn.moj-ai-contract-guideline-2023",
@@ -1495,7 +1632,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/none",
-  :db/id -144}
+  :db/id -151}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "jpn.moj-ai-contract-guideline-2023",
@@ -1506,7 +1643,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/law-firm-saas-license",
-  :db/id -145}
+  :db/id -152}
  {:legal/basis-count 2,
   :legal/fact-kind "verdict",
   :legal/basis
@@ -1518,7 +1655,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-document-fee",
-  :db/id -146}
+  :db/id -153}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "jpn.moj-ai-contract-guideline-2023",
@@ -1529,7 +1666,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-subscription",
-  :db/id -147}
+  :db/id -154}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1539,7 +1676,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/directory-listing-flat",
-  :db/id -148}
+  :db/id -155}
  {:legal/basis-count 2,
   :legal/fact-kind "verdict",
   :legal/basis "jpn.bengoshi-ho-72 jpn.moj-ai-contract-guideline-2023",
@@ -1550,7 +1687,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/per-referral-fee",
-  :db/id -149}
+  :db/id -156}
  {:legal/basis-count 2,
   :legal/fact-kind "verdict",
   :legal/basis "jpn.bengoshi-ho-72 jpn.moj-ai-contract-guideline-2023",
@@ -1560,22 +1697,33 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/success-fee-share",
-  :db/id -150}
- {:db/id -151,
+  :db/id -157}
+ {:db/id -158,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "JPN",
   :legal/gap "弁護士法27条（非弁提携）の原文・射程が未検証"}
- {:db/id -152,
+ {:db/id -159,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "JPN",
   :legal/gap "日弁連 弁護士等の業務広告に関する規程が未取得"}
- {:db/id -153,
+ {:db/id -160,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "JPN",
   :legal/gap "行政書士法1条の2/19条、司法書士法3条の原文が未取得（現在は制限方向にのみ作用）"}
+ {:db/id -161,
+  :source/dataset "legal-jurisdiction-rules",
+  :legal/fact-kind "known-gap",
+  :legal/jurisdiction "JPN",
+  :legal/gap
+  "各社の Government Request Portal は捜査機関専用であり利用者向け経路に含めない（個別URLは収載しない）"}
+ {:db/id -162,
+  :source/dataset "legal-jurisdiction-rules",
+  :legal/fact-kind "known-gap",
+  :legal/jurisdiction "JPN",
+  :legal/gap "令和8年法律第58号による改正は2027-03-01施行で未施行のため、施行後に再検証が必要"}
  {:legal/rule-id "kor.constitutional-court-2022-lawtalk-ads",
   :legal/fact-kind "rule",
   :legal/summary
@@ -1589,7 +1737,7 @@
   :legal/rule-title "헌법재판소 2022 — 대한변협 광고규정의 플랫폼 광고 금지 조항 위헌 결정",
   :source/dataset "legal-jurisdiction-rules",
   :legal/verified false,
-  :db/id -154,
+  :db/id -163,
   :legal/topic "advertising platform",
   :legal/established-date "2022",
   :legal/url-provenance "secondary-commentary"}
@@ -1606,7 +1754,7 @@
   :legal/rule-title "법무부 2023-09-26 — 로톡 가입 변호사 징계 취소 / 공정위 과징금",
   :source/dataset "legal-jurisdiction-rules",
   :legal/verified false,
-  :db/id -155,
+  :db/id -164,
   :legal/topic "advertising competition platform",
   :legal/established-date "2023-09-26",
   :legal/url-provenance "secondary-commentary"}
@@ -1619,7 +1767,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/template-selection",
-  :db/id -156}
+  :db/id -165}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1629,7 +1777,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/document-assembly",
-  :db/id -157}
+  :db/id -166}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1639,7 +1787,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/legal-analysis",
-  :db/id -158}
+  :db/id -167}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1649,7 +1797,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-reviewed",
-  :db/id -159}
+  :db/id -168}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1659,7 +1807,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/inhouse-reviewed",
-  :db/id -160}
+  :db/id -169}
  {:legal/basis-count 2,
   :legal/fact-kind "verdict",
   :legal/basis
@@ -1671,7 +1819,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-directory",
-  :db/id -161}
+  :db/id -170}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1681,7 +1829,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/referral-placement",
-  :db/id -162}
+  :db/id -171}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1691,7 +1839,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/none",
-  :db/id -163}
+  :db/id -172}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1701,7 +1849,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/law-firm-saas-license",
-  :db/id -164}
+  :db/id -173}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1711,7 +1859,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-document-fee",
-  :db/id -165}
+  :db/id -174}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1721,7 +1869,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-subscription",
-  :db/id -166}
+  :db/id -175}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "kor.constitutional-court-2022-lawtalk-ads",
@@ -1731,7 +1879,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/directory-listing-flat",
-  :db/id -167}
+  :db/id -176}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1741,7 +1889,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/per-referral-fee",
-  :db/id -168}
+  :db/id -177}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1751,13 +1899,13 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/success-fee-share",
-  :db/id -169}
- {:db/id -170,
+  :db/id -178}
+ {:db/id -179,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "KOR",
   :legal/gap "변호사법 §34 / §109 の条文原文が未取得"}
- {:db/id -171,
+ {:db/id -180,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "KOR",
@@ -1777,7 +1925,7 @@
   :legal/rule-title "Advocaat の procesmonopolie と法的助言の非規制",
   :source/dataset "legal-jurisdiction-rules",
   :legal/verified false,
-  :db/id -172,
+  :db/id -181,
   :legal/topic "privilege unauthorized-practice",
   :legal/url-provenance "secondary-commentary"}
  {:legal/basis-count 1,
@@ -1789,7 +1937,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/template-selection",
-  :db/id -173}
+  :db/id -182}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "nld.procesmonopolie",
@@ -1799,7 +1947,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/document-assembly",
-  :db/id -174}
+  :db/id -183}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "nld.procesmonopolie",
@@ -1810,7 +1958,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/legal-analysis",
-  :db/id -175}
+  :db/id -184}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "nld.procesmonopolie",
@@ -1820,7 +1968,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-reviewed",
-  :db/id -176}
+  :db/id -185}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1830,7 +1978,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/inhouse-reviewed",
-  :db/id -177}
+  :db/id -186}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1840,7 +1988,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-directory",
-  :db/id -178}
+  :db/id -187}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1850,7 +1998,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/referral-placement",
-  :db/id -179}
+  :db/id -188}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1860,7 +2008,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/none",
-  :db/id -180}
+  :db/id -189}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1870,7 +2018,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-document-fee",
-  :db/id -181}
+  :db/id -190}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1880,7 +2028,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-subscription",
-  :db/id -182}
+  :db/id -191}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1890,7 +2038,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/law-firm-saas-license",
-  :db/id -183}
+  :db/id -192}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1900,7 +2048,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/directory-listing-flat",
-  :db/id -184}
+  :db/id -193}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1910,7 +2058,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/per-referral-fee",
-  :db/id -185}
+  :db/id -194}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1920,13 +2068,13 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/success-fee-share",
-  :db/id -186}
- {:db/id -187,
+  :db/id -195}
+ {:db/id -196,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "NLD",
   :legal/gap "Advocatenwet の条文原文が未取得"}
- {:db/id -188,
+ {:db/id -197,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "NLD",
@@ -1944,7 +2092,7 @@
   "Legal Profession Act 1966 s.33 — unauthorised persons acting as advocates or solicitors",
   :source/dataset "legal-jurisdiction-rules",
   :legal/verified false,
-  :db/id -189,
+  :db/id -198,
   :legal/topic "unauthorized-practice",
   :legal/url-provenance "official-legislation-site"}
  {:legal/basis-count 0,
@@ -1956,7 +2104,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/template-selection",
-  :db/id -190}
+  :db/id -199}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1966,7 +2114,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/document-assembly",
-  :db/id -191}
+  :db/id -200}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "sgp.lpa-s33",
@@ -1976,7 +2124,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/legal-analysis",
-  :db/id -192}
+  :db/id -201}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "sgp.lpa-s33",
@@ -1986,7 +2134,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-reviewed",
-  :db/id -193}
+  :db/id -202}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -1996,7 +2144,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/inhouse-reviewed",
-  :db/id -194}
+  :db/id -203}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2006,7 +2154,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-directory",
-  :db/id -195}
+  :db/id -204}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2016,7 +2164,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/referral-placement",
-  :db/id -196}
+  :db/id -205}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2026,7 +2174,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/none",
-  :db/id -197}
+  :db/id -206}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2036,7 +2184,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-document-fee",
-  :db/id -198}
+  :db/id -207}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2046,7 +2194,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-subscription",
-  :db/id -199}
+  :db/id -208}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2056,7 +2204,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/law-firm-saas-license",
-  :db/id -200}
+  :db/id -209}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2066,7 +2214,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/directory-listing-flat",
-  :db/id -201}
+  :db/id -210}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2076,7 +2224,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/per-referral-fee",
-  :db/id -202}
+  :db/id -211}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2086,13 +2234,13 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/success-fee-share",
-  :db/id -203}
- {:db/id -204,
+  :db/id -212}
+ {:db/id -213,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "SGP",
   :legal/gap "Legal Profession Act s.33 の条文本文が未取得"}
- {:db/id -205,
+ {:db/id -214,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "SGP",
@@ -2113,7 +2261,7 @@
   "ABA Model Rule 5.4 — Professional Independence of a Lawyer",
   :source/dataset "legal-jurisdiction-rules",
   :legal/verified false,
-  :db/id -206,
+  :db/id -215,
   :legal/topic "fee-sharing",
   :legal/url-provenance "secondary-commentary"}
  {:legal/rule-id "usa.aba-model-rule-5-5",
@@ -2131,7 +2279,7 @@
   "ABA Model Rule 5.5 — Unauthorized Practice of Law",
   :source/dataset "legal-jurisdiction-rules",
   :legal/verified false,
-  :db/id -207,
+  :db/id -216,
   :legal/topic "unauthorized-practice",
   :legal/url-provenance "secondary-commentary"}
  {:legal/rule-id "usa.aba-model-rule-7-2b",
@@ -2150,7 +2298,7 @@
   "ABA Model Rule 7.2(b) — payment for recommending a lawyer's services",
   :source/dataset "legal-jurisdiction-rules",
   :legal/verified false,
-  :db/id -208,
+  :db/id -217,
   :legal/topic "advertising referral",
   :legal/url-provenance "secondary-commentary"}
  {:legal/basis-count 0,
@@ -2162,7 +2310,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/template-selection",
-  :db/id -209}
+  :db/id -218}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2172,7 +2320,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/document-assembly",
-  :db/id -210}
+  :db/id -219}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2182,7 +2330,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/legal-analysis",
-  :db/id -211}
+  :db/id -220}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2192,7 +2340,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-reviewed",
-  :db/id -212}
+  :db/id -221}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2202,7 +2350,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/inhouse-reviewed",
-  :db/id -213}
+  :db/id -222}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2212,7 +2360,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-directory",
-  :db/id -214}
+  :db/id -223}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2222,7 +2370,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/referral-placement",
-  :db/id -215}
+  :db/id -224}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2232,7 +2380,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/none",
-  :db/id -216}
+  :db/id -225}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2242,7 +2390,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-document-fee",
-  :db/id -217}
+  :db/id -226}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2252,7 +2400,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-subscription",
-  :db/id -218}
+  :db/id -227}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2262,7 +2410,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/law-firm-saas-license",
-  :db/id -219}
+  :db/id -228}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2272,7 +2420,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/directory-listing-flat",
-  :db/id -220}
+  :db/id -229}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2282,7 +2430,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/per-referral-fee",
-  :db/id -221}
+  :db/id -230}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2292,31 +2440,31 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/success-fee-share",
-  :db/id -222}
- {:db/id -223,
+  :db/id -231}
+ {:db/id -232,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "USA",
   :legal/gap "50州+準州のうち3法域しか収載していない"}
- {:db/id -224,
+ {:db/id -233,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "USA",
   :legal/gap
   "ABA Model Rules の条文原文は取得経路が無い（ABA 公式は 403、Cornell LII は現在ホストしていない）。ただしモデルは法ではないので、原文が取れても verdict の根拠にはならない"}
- {:db/id -225,
+ {:db/id -234,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "USA",
   :legal/gap
   "アリゾナ ACJA §7-209 / ER 5.4 撤廃命令は azcourts.gov が curl・WebFetch とも 403 で未取得"}
- {:db/id -226,
+ {:db/id -235,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "USA",
   :legal/gap
   "ユタの Supreme Court standing order は utcourts.gov が到達不能で未取得"}
- {:db/id -227,
+ {:db/id -236,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "USA",
@@ -2336,7 +2484,7 @@
   "Arizona Alternative Business Structure (ACJA § 7-209); ER 5.4 repealed",
   :source/dataset "legal-jurisdiction-rules",
   :legal/verified false,
-  :db/id -228,
+  :db/id -237,
   :legal/topic "entity-regulation fee-sharing",
   :legal/established-date "2021-01-01",
   :legal/url-provenance "official-court-site"}
@@ -2349,7 +2497,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/template-selection",
-  :db/id -229}
+  :db/id -238}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-az.abs-acja-7-209",
@@ -2359,7 +2507,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/document-assembly",
-  :db/id -230}
+  :db/id -239}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-az.abs-acja-7-209",
@@ -2369,7 +2517,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/legal-analysis",
-  :db/id -231}
+  :db/id -240}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-az.abs-acja-7-209",
@@ -2379,7 +2527,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-reviewed",
-  :db/id -232}
+  :db/id -241}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-az.abs-acja-7-209",
@@ -2389,7 +2537,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/inhouse-reviewed",
-  :db/id -233}
+  :db/id -242}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-az.abs-acja-7-209",
@@ -2399,7 +2547,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-directory",
-  :db/id -234}
+  :db/id -243}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-az.abs-acja-7-209",
@@ -2409,7 +2557,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/referral-placement",
-  :db/id -235}
+  :db/id -244}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-az.abs-acja-7-209",
@@ -2419,7 +2567,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/none",
-  :db/id -236}
+  :db/id -245}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-az.abs-acja-7-209",
@@ -2429,7 +2577,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-document-fee",
-  :db/id -237}
+  :db/id -246}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-az.abs-acja-7-209",
@@ -2439,7 +2587,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-subscription",
-  :db/id -238}
+  :db/id -247}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-az.abs-acja-7-209",
@@ -2449,7 +2597,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/law-firm-saas-license",
-  :db/id -239}
+  :db/id -248}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-az.abs-acja-7-209",
@@ -2459,7 +2607,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/directory-listing-flat",
-  :db/id -240}
+  :db/id -249}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-az.abs-acja-7-209",
@@ -2469,7 +2617,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/per-referral-fee",
-  :db/id -241}
+  :db/id -250}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-az.abs-acja-7-209",
@@ -2479,13 +2627,13 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/success-fee-share",
-  :db/id -242}
- {:db/id -243,
+  :db/id -251}
+ {:db/id -252,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "USA-AZ",
   :legal/gap "ACJA §7-209 の原文が未取得"}
- {:db/id -244,
+ {:db/id -253,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "USA-AZ",
@@ -2510,7 +2658,7 @@
   "D.C. Rule of Professional Conduct 5.4 — Professional Independence of a Lawyer",
   :source/dataset "legal-jurisdiction-rules",
   :legal/verified true,
-  :db/id -245,
+  :db/id -254,
   :legal/topic "fee-sharing",
   :legal/url-provenance "official-bar-site"}
  {:legal/basis-count 0,
@@ -2522,7 +2670,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/template-selection",
-  :db/id -246}
+  :db/id -255}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2532,7 +2680,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/document-assembly",
-  :db/id -247}
+  :db/id -256}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2542,7 +2690,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/legal-analysis",
-  :db/id -248}
+  :db/id -257}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2552,7 +2700,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-reviewed",
-  :db/id -249}
+  :db/id -258}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2562,7 +2710,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/inhouse-reviewed",
-  :db/id -250}
+  :db/id -259}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2572,7 +2720,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-directory",
-  :db/id -251}
+  :db/id -260}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2582,7 +2730,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/referral-placement",
-  :db/id -252}
+  :db/id -261}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2592,7 +2740,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/none",
-  :db/id -253}
+  :db/id -262}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2602,7 +2750,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/law-firm-saas-license",
-  :db/id -254}
+  :db/id -263}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2612,7 +2760,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-document-fee",
-  :db/id -255}
+  :db/id -264}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2622,7 +2770,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-subscription",
-  :db/id -256}
+  :db/id -265}
  {:legal/basis-count 0,
   :legal/fact-kind "verdict",
   :legal/basis "",
@@ -2632,7 +2780,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/directory-listing-flat",
-  :db/id -257}
+  :db/id -266}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-dc.rule-5-4",
@@ -2642,7 +2790,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/per-referral-fee",
-  :db/id -258}
+  :db/id -267}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-dc.rule-5-4",
@@ -2651,13 +2799,13 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/success-fee-share",
-  :db/id -259}
- {:db/id -260,
+  :db/id -268}
+ {:db/id -269,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "USA-DC",
   :legal/gap "D.C. Court of Appeals Rule 49（UPL）が未取得"}
- {:db/id -261,
+ {:db/id -270,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "USA-DC",
@@ -2678,7 +2826,7 @@
   "Utah Office of Legal Services Innovation — regulatory sandbox (Phase 2)",
   :source/dataset "legal-jurisdiction-rules",
   :legal/verified false,
-  :db/id -262,
+  :db/id -271,
   :legal/topic "fee-sharing sandbox unauthorized-practice",
   :legal/url-provenance "official-regulator-site"}
  {:legal/basis-count 1,
@@ -2690,7 +2838,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/template-selection",
-  :db/id -263}
+  :db/id -272}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-ut.legal-services-sandbox",
@@ -2700,7 +2848,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/document-assembly",
-  :db/id -264}
+  :db/id -273}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-ut.legal-services-sandbox",
@@ -2710,7 +2858,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/legal-analysis",
-  :db/id -265}
+  :db/id -274}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-ut.legal-services-sandbox",
@@ -2720,7 +2868,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-reviewed",
-  :db/id -266}
+  :db/id -275}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-ut.legal-services-sandbox",
@@ -2730,7 +2878,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/inhouse-reviewed",
-  :db/id -267}
+  :db/id -276}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-ut.legal-services-sandbox",
@@ -2740,7 +2888,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/lawyer-directory",
-  :db/id -268}
+  :db/id -277}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-ut.legal-services-sandbox",
@@ -2750,7 +2898,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "service",
   :legal/mode "mode/referral-placement",
-  :db/id -269}
+  :db/id -278}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-ut.legal-services-sandbox",
@@ -2760,7 +2908,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/none",
-  :db/id -270}
+  :db/id -279}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-ut.legal-services-sandbox",
@@ -2770,7 +2918,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-document-fee",
-  :db/id -271}
+  :db/id -280}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-ut.legal-services-sandbox",
@@ -2780,7 +2928,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/consumer-subscription",
-  :db/id -272}
+  :db/id -281}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-ut.legal-services-sandbox",
@@ -2790,7 +2938,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/law-firm-saas-license",
-  :db/id -273}
+  :db/id -282}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-ut.legal-services-sandbox",
@@ -2800,7 +2948,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/directory-listing-flat",
-  :db/id -274}
+  :db/id -283}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-ut.legal-services-sandbox",
@@ -2810,7 +2958,7 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/per-referral-fee",
-  :db/id -275}
+  :db/id -284}
  {:legal/basis-count 1,
   :legal/fact-kind "verdict",
   :legal/basis "usa-ut.legal-services-sandbox",
@@ -2820,14 +2968,14 @@
   :source/dataset "legal-jurisdiction-rules",
   :legal/mode-kind "revenue",
   :legal/mode "revenue/success-fee-share",
-  :db/id -276}
- {:db/id -277,
+  :db/id -285}
+ {:db/id -286,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
   :legal/jurisdiction "USA-UT",
   :legal/gap "standing order 原文が未取得"}
- {:db/id -278,
+ {:db/id -287,
   :source/dataset "legal-jurisdiction-rules",
   :legal/fact-kind "known-gap",
-  :legal/jurisdiction "USA-UT",
+  :legal/jurisdiction "USA-UT", 
   :legal/gap "Phase 2 の縮小内容の詳細が未取得"}]
